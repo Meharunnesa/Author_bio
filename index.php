@@ -32,7 +32,7 @@ function display_author_bio($content){
         $author_pic = get_avatar( $post->post_author, 96 );
 
 
-        $author_bio = '<p><strong>Author Bio: </strong>' .'<br>' .$author_pic .'<br>' . esc_html($author_name) .'<br>' .esc_html($author_mail) .'<br>' .esc_html($author_url) .'<br>' .esc_html($author_description) .'<br>' .esc_html($author_fb) .'<br>' .esc_html($author_twi) .'<br>' .esc_html($author_link) . '</p>';
+        //$author_bio = '<p><strong>Author Bio: </strong>' .'<br>' .$author_pic .'<br>' . esc_html($author_name) .'<br>' .esc_html($author_mail) .'<br>' .esc_html($author_url) .'<br>' .esc_html($author_description) .'<br>' .esc_html($author_fb) .'<br>' .esc_html($author_twi) .'<br>' .esc_html($author_link) . '</p>';
 
         ob_start();
         
