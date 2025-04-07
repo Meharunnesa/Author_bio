@@ -15,7 +15,7 @@ function ab_styles(){
    
 }
 
-add_action('admin_enqueue_scripts', 'ab_styles');
+add_action('wp_enqueue_scripts', 'ab_styles');
 
 function display_author_bio($content){
    
@@ -29,7 +29,7 @@ function display_author_bio($content){
         $author_fb = get_the_author_meta('ab_facebook', $post->post_author);
         $author_twi = get_the_author_meta('ab_twitter', $post->post_author);
         $author_link = get_the_author_meta('ab_linkedin', $post->post_author);
-        $author_pic = get_avatar( get_current_user_ID(), 96 );
+        $author_pic = get_avatar( $post->post_author, 96 );
 
 
         $author_bio = '<p><strong>Author Bio: </strong>' .'<br>' .$author_pic .'<br>' . esc_html($author_name) .'<br>' .esc_html($author_mail) .'<br>' .esc_html($author_url) .'<br>' .esc_html($author_description) .'<br>' .esc_html($author_fb) .'<br>' .esc_html($author_twi) .'<br>' .esc_html($author_link) . '</p>';
@@ -39,12 +39,43 @@ function display_author_bio($content){
        ?>
 
         <div class="author-box">
-            <div class="img">
-                <?php echo $author_pic;?>
+            <div class="info">
+                <div class="img">
+                    <?php echo $author_pic;?>
+                </div>
+                <div class="content">
+                    <p class="title"><?php echo esc_html($author_name);?></p>
+                    <p class="des"><?php echo esc_html($author_description);?></p>
+                </div>
             </div>
-            <div class="content">
-                <p class="title"><?php echo esc_html($author_name);?></p>
-                <p class="des"><?php echo esc_html($author_description);?></p>
+           
+            <div class="social">
+                <div class="mail">
+                        <a href="<?php echo $author_mail;?>">
+                            <p class="dashicons dashicons-email"></p>
+                        </a>
+                </div>
+                <div class="url">
+                        <a href="<?php echo $author_url;?>">
+                            <p class="dashicons dashicons-admin-site-alt3"></p>
+                        </a>
+                    </div>
+                <div class="fb">
+                        <a href="<?php echo $author_fb;?>">
+                            <p class="dashicons dashicons-facebook"></p>
+                        </a>
+                </div>
+                <div class="twi">
+                        <a href="<?php echo $author_twi;?>">
+                            <p class="dashicons dashicons-twitter"></p>
+                        </a>
+                </div>
+                <div class="link">
+                        <a href="<?php echo $author_link;?>">
+                            <p class="dashicons dashicons-linkedin"></p>
+                        </a>
+                </div>
+                   
             </div>
         </div>
         
@@ -70,7 +101,7 @@ function modify_user_contact_methods( $methods ) {
 	
 	$methods['ab_facebook']   = __( 'Facebook' );
 	$methods['ab_twitter'] = __( 'Twitter' );
-    $methods['ab_linkedin']   = __( 'Linkedin' );
+    $methods['ab_linkedin']   = __( 'linkedin' );
 	
 
 	return $methods;

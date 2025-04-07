@@ -1,0 +1,50 @@
+.author-box{
+    width: 700px;
+    border: 2px solid rgb(24, 116, 202);
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.author-box .info{
+    width: 700px;
+    display: flex;
+    
+}
+
+.author-box .info .img img{
+    width: 150px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+
+.author-box .info .content{
+   width: 500px;
+   height: auto;
+   margin-left: 15px;
+   margin-top: 15px;
+   
+}
+
+.author-box .info .content .title{
+    font-weight: 800;
+}
+
+.author-box .info .content .des{
+    margin-top: -18px;
+}
+
+.author-box .social{
+    width: 700px;
+    display: flex;
+    justify-content: center;
+}
+
+.author-box .social a{
+    text-decoration: none;
+
+}
+
+.author-box .social a p{
+    font-size: 35px;
+    padding: 30px;
+}
